@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="dstyle.css">
+  <title> Stock Market Simulator</title>
+</head>
+
+<body>
+  <h1> Stock Market Simulator </h1>
+
+  <div class="maindiv">
+
+    <div class="stockinfo2">
+      <h2 id="totalProfit" class="stockName"> Retreiving Data ... </h2>
+      <form id="allStocks">
+        <select id="allStocksSelect">
+        </select>
+      </form>
+      <h2 id="profitonthisstock" class="stockName"> Retreiving Data ... </h2>
+    </div>
+
+    <div class="stock">
+      <canvas height="400" width="600"> </canvas>
+    </div>
+
+    <div class="stockinfo">
+      <h2 id="stockName" class="stockName"> Retreiving Data ... </h2>
+      <h2 id="date" class="stockName"> Retreiving Data ... </h2>
+      <h2 id="open" class="stockName"> Retreiving Data ... </h2>
+      <h2 id="high" class="stockName"> Retreiving Data ... </h2>
+      <h2 id="low" class="stockName"> Retreiving Data ... </h2>
+      <h2 id="close" class="stockName"> Retreiving Data ... </h2>
+    </div>
+  </div>
+
+  <div class="stockSearchAndAdd">
+    <h1> Stock Search </h1>
+    <form id="stockSearchForm">
+      <div style="display:flex">
+        <input id="stockSearchBar" value="Search stocks you want to view or buy" type="text"></input>
+        <input id="unitsBar" value="Shares" type="text"></input>
+      </div>
+    </form>
+
+    <button id="purchaseButton" class="purchase"> Purchase </button>
+    <button id="searchButton" class="search"> Search </button>
+
+
+  </div>
+  <script src="stocks.js"></script>
+  <script src="graphics.js"> </script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+h1 {
+  font-family: monospace;
+  text-align:center;
+  color: white;
+}
+
+body {
+  background-color: #465172;
+
+}
+
+input {
+  color: #AEB6BF;
+  height: 20px;
+  width: 300px;
+  border-radius: 10px;
+  border-color: Transparent;
+  font-size: 20px;
+  padding: 10px;
+  margin-bottom: 5%;
+}
+
+
+.logindiv {
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding: 10px 0px 50px 0px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 30%;
+  background-color: #5F6D9A;
+}
+
+button {
+  color: white;
+  border-color: Transparent;
+  border-radius: 7px;
+  width: 130px;
+  height: 45px;
+  font-size: 20px;
+  font-stretch: expanded;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out 0s;
+}
+.registerButton:hover {
+  background-color: #32D778;
+  color: white;
+}
+
+.loginButton:hover{
+  background-color: #39A5ED;
+  color: white;
+}
+.loginButton {
+  background-color: white;
+  color: #39A5ED;
+}
+.registerButton {
+  background-color: white;
+  color: #32D778;
+}

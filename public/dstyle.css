@@ -1,0 +1,160 @@
+h1 {
+  font-family: monospace;
+  text-align:center;
+  color: black;
+  color: white;
+}
+
+body {
+  background-color: #465172;
+
+}
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 8px;
+    background-color:black;
+    /* box-shadow: 0px 1px 10px 1px #D6DBDF; */
+
+}
+
+input {
+  color: #AEB6BF;
+}
+#stockName {
+  color: #3498DB;
+  color: #5DADE2;
+}
+#high {
+  color: #2ECC71;
+}
+#low {
+  color: #E74C3C;
+}
+.stockName {
+  font-family: monospace;
+  font-stretch: semi-condensed;
+  border-radius: 1px;
+  height: auto;
+  padding: 10px;
+  padding-right: 1px;
+  text-align: center;
+  background-color: white;
+  border-radius: 2px;
+  /* box-shadow: 0px 1px 10px 1px #D6DBDF; */
+  background-color: #465172;
+  color: white;
+
+}
+
+
+.stock {
+  text-align: center;
+}
+.maindiv {
+  display: flex;
+  height: 450px;
+}
+
+.stockinfo {
+  padding: 10px;
+  margin-left: 20px;
+  background-color: #F2F3F4;
+  border-radius: 5px;
+  width: 250px;
+  text-align:center;
+  align-content: center;
+  background-color: #5F6D9A;
+}
+.stockinfo2 {
+  height: 250px;
+  background-color: #F2F3F4;
+  padding: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 5px;
+  width: 250px;
+  text-align:center;
+  align-content: center;
+  background-color: #5F6D9A;
+}
+
+select {
+  width: 150px;
+}
+
+.stockSearchAndAdd {
+  padding: 10px;
+  margin-top: 50px;
+  margin-left: 90px;
+  margin-bottom: 10px;
+  background-color: #F2F3F4;
+  border-radius: 5px;
+  width: 800px;
+  height: 200px;
+  background-color: #5F6D9A;
+}
+
+button {
+  color: white;
+  border-color: Transparent;
+  border-radius: 7px;
+  width: 130px;
+  height: 45px;
+  font-size: 20px;
+  font-stretch: expanded;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-align: center;
+}
+button {
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out 0s;
+  /* box-shadow: 0px 1px 10px 1px #D6DBDF; */
+}
+.search:hover {
+  background-color: #32D778;
+  color: white;
+}
+
+.purchase:hover{
+  background-color: #39A5ED;
+  color: white;
+}
+.purchase {
+  margin-left: 100px;
+  margin-right: 50px;
+  background-color: white;
+  color: #39A5ED;
+}
+.search {
+  background-color: white;
+  color: #32D778;
+}
+#stockSearchBar {
+  height: 20px;
+  width: 500px;
+  border-radius: 10px;
+  border-color: Transparent;
+  /* box-shadow:  0px 1px 10px 1px #D6DBDF; */
+  font-size: 20px;
+  padding: 10px;
+}
+#stockSearchForm {
+  margin: 10px;
+
+}
+#unitsBar {
+height: 20px;
+width: 100px;
+margin-left: 20px;
+border-radius: 20px;
+border-radius: 10px;
+border-color: Transparent;
+/* box-shadow: 0px 1px 10px 1px #D6DBDF; */
+font-size: 20px;
+padding: 10px;
+}
