@@ -116,6 +116,8 @@ async function setup() {
     s = userData.stocks[0].symbol;
     userData.stocks[0].dataPoints = await getStonks(s, "daily", 150);
   }
+
+    alert("Thanks for visiting my Stock Market Simulator. If this is your first time on the site, here are a few instructions.:\n\n - In this simulator you can view, purchase, and add stocks to your portfolio. Start by typing the symbol of a stock you would like to view in the 'Stock Search' section, then click Search if you would like to view this stock's history, or purchase it. \n - The website will draw a graph of the stock in question. \n - Scroll over the graph to view attributes of the stock on a given day. You can also cycle through stocks you've viewed or purchased in the drop down menu to the left. This menu will expand as you view/purchase more stocks. \n - Finally, since this website is backed by a database, you can login later or on a different device and your stocks will still be there. \n  - Aditya R.");
     await drawgraph();
     setNumbers();
     createDropDown();

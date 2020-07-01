@@ -4,6 +4,16 @@ h1 {
   color: white;
 }
 
+h2 {
+  text-align: center;
+  margin-top: 4%;
+  color: white;
+  font-family: monospace;
+  background-color: #5F6D9A;
+  padding: 10px;
+  width: 40%;
+
+}
 body {
   background-color: #465172;
 
@@ -22,7 +32,7 @@ input {
 
 
 .logindiv {
-  margin-top: 10%;
+  /* margin-top: 10%; */
   margin-left: auto;
   margin-right: auto;
   text-align: center;
