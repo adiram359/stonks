@@ -141,18 +141,3 @@ async function getData() {
     }
 }
 setup();
-async function test() {
-  const data = {
-    stock: "GOOG",
-  }
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  }
-  const response = await fetch('/purchaseStock', options);
-  const responseJSON = await response.json()
-}
-// test()
