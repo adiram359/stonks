@@ -54,6 +54,8 @@ async function authenticatePurchase(stock, shares) {
     return;
   }
   else if (await searchStock(stock)) {
+    userData.stocks[userData.index].shares = parseInt(shares, 10);
+
     const newStock = {
       name: "",
       symbol: stock,
@@ -91,15 +93,14 @@ async function searchStock(stock) {
     select.value = "";
     userData.stocks.push(newStock);
     userData.index = userData.stocks.length - 1;
+    userData.stocks[userData.index].purchasePrice = data[0].open;
     add2DropDown(stock);
     await setRetreiving();
     await drawgraph();
     await setNumbers();
-    console.log(data);
     return true;
   } catch (e) {
     alert(`There is no stock with symbol ${stock}`)
-    console.log('stock name invalid');
     return false;
   }
 
@@ -115,7 +116,7 @@ async function setup() {
     userData.stocks[0].dataPoints = await getStonks(s, "daily", 150);
   }
 
-    alert("Thanks for visiting my Stock Market Simulator. If this is your first time on the site, here are a few instructions.:\n\n - In this simulator you can view, purchase, and add stocks to your portfolio. Start by typing the symbol of a stock you would like to view in the 'Stock Search' section, then click Search if you would like to view this stock's history, or purchase it. \n - The website will draw a graph of the stock in question. \n - Scroll over the graph to view attributes of the stock on a given day. You can also cycle through stocks you've viewed or purchased in the drop down menu to the left. This menu will expand as you view/purchase more stocks. \n - Finally, since this website is backed by a database, you can login later or on a different device and your stocks will still be there. \n  - Aditya R.");
+    // alert("Thanks for visiting my Stock Market Simulator. If this is your first time on the site, here are a few instructions.:\n\n - In this simulator you can view, purchase, and add stocks to your portfolio. Start by typing the symbol of a stock you would like to view in the 'Stock Search' section, then click Search if you would like to view this stock's history, or purchase it. \n - The website will draw a graph of the stock in question. \n - Scroll over the graph to view attributes of the stock on a given day. You can also cycle through stocks you've viewed or purchased in the drop down menu to the left. This menu will expand as you view/purchase more stocks. \n - Finally, since this website is backed by a database, you can login later or on a different device and your stocks will still be there. \n  - Aditya R.");
     await drawgraph();
     setNumbers();
     createDropDown();
@@ -147,6 +148,5 @@ async function test() {
   }
   const response = await fetch('/purchaseStock', options);
   const responseJSON = await response.json()
-  console.log(responseJSON);
 }
 // test()

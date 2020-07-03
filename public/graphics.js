@@ -49,8 +49,8 @@ async function setNumbers() {
   }
   const data = dataPoints[dateIndex];
   const stock = userData.stocks[userData.index];
-  const profit = stock.shares * (dataPoints[0].open - stock.purchasePrice)
-  setProfit(`profit on ${stock.symbol}:  $ ${profit - profit % 0.01}`);
+  const profit = dataPoints[0].open === stock.purchasePrice ? 0 :stock.shares * (dataPoints[0].open - stock.purchasePrice)
+  setProfit(`profit on ${stock.symbol}:  $ ${Math.floor(profit * 100 / 100)}`);
   setStockName();
   setStockOpen(`open: $${dataPoints[dateIndex].open}`);
   setStockHigh(`high: $${dataPoints[dateIndex].high}`);
@@ -59,6 +59,7 @@ async function setNumbers() {
   setStockClose(`close: $${dataPoints[dateIndex].close}`);
 }
 function setProfit(value) {
+  console.log(value);
   const profitDiv = document.getElementById('totalProfit')
   profitDiv.innerHTML = value;
   profitDiv.style.color = value >= 0 ? "#E74C3C": "#2ECC71";
