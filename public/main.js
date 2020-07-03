@@ -4,7 +4,6 @@ console.log(USERNAME);
 
 var userData = {};
 const stocks = new Stocks('X4DF3J2NHVQRYN0N');
-// const index = 0;
 
 async function fetchUserData(username) {
   const data = {
@@ -80,6 +79,15 @@ async function authenticatePurchase(stock, shares) {
 }
 async function searchStock(stock) {
   try {
+    for (var i = 0; i < userData.stocks.length; i += 1) {
+      if (userData.stocks[i].symbol === stock) {
+        userData.index = i;
+        await setRetreiving();
+        await drawgraph();
+        await setNumbers();
+        return false;
+      }
+    }
       const data = await stocks.timeSeries({
       symbol: stock,
       interval: 'daily',
@@ -107,7 +115,6 @@ async function searchStock(stock) {
 }
 async function setup() {
   userData = await fetchUserData(USERNAME);
-  // console.log("user data fetched");
   for (var i = 0; i < userData.stocks.length; i += 1) {
     userData.stocks[i].dataPoints = null;
   }
@@ -123,7 +130,6 @@ async function setup() {
 
 }
 async function getData() {
-  // console.log(userData);
   if (userData.stocks.length == 0 || userData.index < 0) {
     return [];
   } else if (userData.stocks[userData.index].dataPoints === null) {

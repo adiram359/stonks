@@ -11,10 +11,10 @@ unitBar.onclick = () => {
 const searchButton = document.getElementById('searchButton');
 const purchaseButton = document.getElementById('purchaseButton');
 searchButton.onclick = async () => {
-  await searchStock(searchBar.value);
+  await searchStock(searchBar.value.trim());
 }
 purchaseButton.onclick = async () => {
-  await authenticatePurchase(searchBar.value, unitBar.value);
+  await authenticatePurchase(searchBar.value.trim(), unitBar.value.trim());
 };
 
 const canvas = document.querySelector("canvas");
@@ -29,7 +29,6 @@ const R = "Retreiving Data ...";
 var dateIndex = 0;
 var rendering = true;
 canvas.onmousemove = (event) => {
-  console.log(rendering);
   if (!rendering) {
     drawCrossHairs(event);
     setNumbers();
@@ -59,7 +58,6 @@ async function setNumbers() {
   setStockClose(`close: $${dataPoints[dateIndex].close}`);
 }
 function setProfit(value) {
-  console.log(value);
   const profitDiv = document.getElementById('totalProfit')
   profitDiv.innerHTML = value;
   profitDiv.style.color = value >= 0 ? "#E74C3C": "#2ECC71";

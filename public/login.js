@@ -4,6 +4,7 @@ const loginBar = document.getElementById('userNameBar');
 const registerBar = document.getElementById('registerBar')
 const status = document.getElementById('status');
 const statusDiv = document.getElementById('statusDiv');
+
 loginBar.onfocus = () => {
   loginBar.value = "";
   loginBar.style.color = "black";
