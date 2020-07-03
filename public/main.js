@@ -48,7 +48,6 @@ function createDropDown() {
     select.appendChild(o);
   }
 }
-
 async function authenticatePurchase(stock, shares) {
   if (isNaN(shares)) {
     alert('must select number of shares');
@@ -77,7 +76,6 @@ async function authenticatePurchase(stock, shares) {
     alert('purchase completed');
   }
 }
-
 async function searchStock(stock) {
   try {
       const data = await stocks.timeSeries({

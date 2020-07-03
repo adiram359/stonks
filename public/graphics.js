@@ -48,12 +48,21 @@ async function setNumbers() {
     return;
   }
   const data = dataPoints[dateIndex];
+  const stock = userData.stocks[userData.index];
+  const profit = stock.shares * (dataPoints[0].open - stock.purchasePrice)
+  setProfit(`profit on ${stock.symbol}:  $ ${profit - profit % 0.01}`);
   setStockName();
   setStockOpen(`open: $${dataPoints[dateIndex].open}`);
   setStockHigh(`high: $${dataPoints[dateIndex].high}`);
   setStockDate(`${dataPoints[dateIndex].date}`);
   setStockLow(`low: $${dataPoints[dateIndex].low}`);
   setStockClose(`close: $${dataPoints[dateIndex].close}`);
+}
+function setProfit(value) {
+  const profitDiv = document.getElementById('totalProfit')
+  profitDiv.innerHTML = value;
+  profitDiv.style.color = value >= 0 ? "#E74C3C": "#2ECC71";
+  profitDiv.style.color = value === R ? "white" : profitDiv.style.color;
 }
 function setRetreiving() {
   setStockName(R);
@@ -62,6 +71,7 @@ function setRetreiving() {
   setStockClose(R);
   setStockOpen(R);
   setStockDate(R);
+  setProfit(R);
 }
 function setBackground() {
   c.clearRect(0, 0, WIDTH, HEIGHT);
